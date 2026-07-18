@@ -20,7 +20,7 @@ return new class extends Migration
 
     Schema::create('products', function (Blueprint $table) {
         $table->ulid('product_id')->primary();
-        $table->foreignId('category_id')->references('category_id')->on('category');
+        $table->foreignId('category_id')->references('category_id')->on('categories');
         $table->string('name');
         $table->string('image_url')->nullable();
         $table->decimal('price', 12, 2);

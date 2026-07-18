@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="p-8 max-w-7xl mx-auto space-y-8 animate-in duration-700 fade-in">
-    
+
     <div class="flex items-center justify-between border-b border-gray-800 pb-8">
         <div>
             <h1 class="text-4xl font-extrabold text-white tracking-tight">Manajemen Produk</h1>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="bg-gray-900 border border-gray-800 rounded-3xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-        
+
         <div class="flex justify-between items-center mb-8">
             <div class="text-xs font-bold text-gray-500 uppercase tracking-widest italic">Inventory / 2026</div>
              <div class="relative w-96">
@@ -29,7 +29,7 @@
             <div class="grid grid-cols-6 gap-4 px-6 py-4 text-[10px] font-black text-gray-600 uppercase tracking-widest border-b border-gray-800/50 mb-2">
                 <div class="col-span-2">Produk</div>
                 <div>Kategori</div>
-                <div>Stok</div>
+                <div>Status</div>
                 <div>Harga</div>
                 <div class="text-right">Aksi</div>
             </div>

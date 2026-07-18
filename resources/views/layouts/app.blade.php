@@ -31,7 +31,7 @@
                     <i class='bx bx-search-alt text-xl text-gray-400'></i>
                     <input type="text" placeholder="Search..." class="bg-transparent outline-none ml-3 text-sm w-full text-white placeholder-gray-400 sidebar-text">
                 </li>
-                
+
                 <li class="nav-link">
                     <a href="{{ url('/') }}" class="menu-item flex items-center p-3 hover:bg-blue-600 rounded-lg transition-all duration-300 ease-out hover:translate-x-2 active:scale-95 {{ Request::is('/') ? 'bg-blue-600' : '' }}">
                         <i class='bx bx-home text-xl'></i> <span class="ml-4 sidebar-text">Dashboard</span>
@@ -64,13 +64,7 @@
                     </a>
                 </li>
 
-              
 
-                <li class="nav-link">
-                    <a href="{{ url('/payments') }}" class="menu-item flex items-center p-3 hover:bg-blue-600 rounded-lg transition-all duration-300 ease-out hover:translate-x-2 active:scale-95 {{ Request::is('payments') ? 'bg-blue-600' : '' }}">
-                        <i class='bx bx-credit-card text-xl'></i> <span class="ml-4 sidebar-text">Payments</span>
-                    </a>
-                </li>
             </ul>
 
             <div class="mt-auto pb-6 w-full list-none">
@@ -96,7 +90,7 @@
             @yield('content')
         </div>
 
-      
+
 
      <style>
         @keyframes footerFadeIn {
@@ -140,10 +134,10 @@
         logoutLink.addEventListener('click', function(e) {
             e.preventDefault(); // Tahan pemindahan halaman instan
             const url = this.getAttribute('href');
-            
+
             // Jalankan animasi pop visual terlebih dahulu
             this.classList.add('logout-pop');
-            
+
             // Munculkan popup konfirmasi SweetAlert2 yang modern
             Swal.fire({
                 title: 'Yakin ingin keluar?',
@@ -159,7 +153,7 @@
             }).then((result) => {
                 // Bersihkan class animasi setelah popup selesai merespon
                 logoutLink.classList.remove('logout-pop');
-                
+
                 if (result.isConfirmed) {
                     // Jika klik ya, langsung meluncur ke rute Laravel /logout
                     window.location.href = url;
@@ -211,7 +205,7 @@
 </footer>
     </section>
 
-    
-    
+
+
 </body>
 </html>
