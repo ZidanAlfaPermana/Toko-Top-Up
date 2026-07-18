@@ -20,7 +20,8 @@ return new class extends Migration
 
     Schema::create('products', function (Blueprint $table) {
         $table->ulid('product_id')->primary();
-        $table->foreignId('category_id')->references('category_id')->on('categories');
+        $table->ulid('category_id')->index();
+        $table->foreign('category_id')->references('category_id')->on('categories');
         $table->string('name');
         $table->string('image_url')->nullable();
         $table->decimal('price', 12, 2);
@@ -29,7 +30,8 @@ return new class extends Migration
 
     Schema::create('orders', function (Blueprint $table) {
         $table->ulid('order_id')->primary();
-        $table->foreignId('product_id')->references('product_id')->on('product');
+        $table->ulid('product_id')->index();
+        $table->foreign('product_id')->references('product_id')->on('products');
         $table->foreignId('user_id')->references('id')->on('users');
         $table->decimal('total_price', 12, 2);
         $table->enum('status', ['pending', 'completed', 'cancel'])->default('pending');
