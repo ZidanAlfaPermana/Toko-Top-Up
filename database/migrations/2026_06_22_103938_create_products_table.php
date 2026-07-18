@@ -12,10 +12,16 @@ return new class extends Migration
   public function up(): void
 {
     Schema::create('products', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');         // Untuk nama produk
-        $table->string('category');     // Untuk kategori
-        $table->decimal('price', 12, 2); // Untuk harga
+        $table->id('product_id');
+        $table->foreignId('category_id')->references('category_id')->on('category');
+        $table->string('name');
+        $table->decimal('price', 12, 2);
+        $table->timestamps();
+    });
+
+    Schema::create('category', function (Blueprint $table) {
+        $table->id('category_id');
+        $table->string('name');
         $table->timestamps();
     });
 }
