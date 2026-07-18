@@ -11,17 +11,17 @@ return new class extends Migration
      */
   public function up(): void
 {
+    Schema::create('category', function (Blueprint $table) {
+        $table->id('category_id');
+        $table->string('name');
+        $table->timestamps();
+    });
+
     Schema::create('products', function (Blueprint $table) {
         $table->id('product_id');
         $table->foreignId('category_id')->references('category_id')->on('category');
         $table->string('name');
         $table->decimal('price', 12, 2);
-        $table->timestamps();
-    });
-
-    Schema::create('category', function (Blueprint $table) {
-        $table->id('category_id');
-        $table->string('name');
         $table->timestamps();
     });
 }
